@@ -1,0 +1,155 @@
+// src/utils/countriesFallback.js
+// Datos de respaldo con países, banderas y capitales para garantizar funcionamiento sin conexión
+
+export const FALLBACK_COUNTRIES = [
+  {
+    name: 'Argentina',
+    capital: 'Buenos Aires',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg',
+    iso2: 'AR',
+  },
+  {
+    name: 'Brazil',
+    capital: 'Brasilia',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg',
+    iso2: 'BR',
+  },
+  {
+    name: 'France',
+    capital: 'Paris',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg',
+    iso2: 'FR',
+  },
+  {
+    name: 'Germany',
+    capital: 'Berlin',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg',
+    iso2: 'DE',
+  },
+  {
+    name: 'Spain',
+    capital: 'Madrid',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg',
+    iso2: 'ES',
+  },
+  {
+    name: 'Italy',
+    capital: 'Rome',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg',
+    iso2: 'IT',
+  },
+  {
+    name: 'Japan',
+    capital: 'Tokyo',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg',
+    iso2: 'JP',
+  },
+  {
+    name: 'Canada',
+    capital: 'Ottawa',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg',
+    iso2: 'CA',
+  },
+  {
+    name: 'Mexico',
+    capital: 'Mexico City',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg',
+    iso2: 'MX',
+  },
+  {
+    name: 'Chile',
+    capital: 'Santiago',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg',
+    iso2: 'CL',
+  },
+  {
+    name: 'Uruguay',
+    capital: 'Montevideo',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg',
+    iso2: 'UY',
+  },
+  {
+    name: 'Colombia',
+    capital: 'Bogota',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg',
+    iso2: 'CO',
+  },
+  {
+    name: 'Peru',
+    capital: 'Lima',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg',
+    iso2: 'PE',
+  },
+  {
+    name: 'United States',
+    capital: 'Washington',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg',
+    iso2: 'US',
+  },
+  {
+    name: 'United Kingdom',
+    capital: 'London',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg',
+    iso2: 'GB',
+  },
+  {
+    name: 'Portugal',
+    capital: 'Lisbon',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg',
+    iso2: 'PT',
+  },
+  {
+    name: 'Netherlands',
+    capital: 'Amsterdam',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg',
+    iso2: 'NL',
+  },
+  {
+    name: 'Australia',
+    capital: 'Canberra',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg',
+    iso2: 'AU',
+  },
+  {
+    name: 'Egypt',
+    capital: 'Cairo',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg',
+    iso2: 'EG',
+  },
+  {
+    name: 'South Africa',
+    capital: 'Pretoria',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg',
+    iso2: 'ZA',
+  },
+  {
+    name: 'Greece',
+    capital: 'Athens',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg',
+    iso2: 'GR',
+  },
+  {
+    name: 'Sweden',
+    capital: 'Stockholm',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg',
+    iso2: 'SE',
+  },
+  {
+    name: 'Switzerland',
+    capital: 'Berne',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Switzerland_%28Pantone%29.svg',
+    iso2: 'CH',
+  },
+  {
+    name: 'China',
+    capital: 'Beijing',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
+    iso2: 'CN',
+  },
+  {
+    name: 'India',
+    capital: 'New Delhi',
+    flag: 'https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg',
+    iso2: 'IN',
+  },
+];

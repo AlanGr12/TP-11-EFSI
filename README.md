@@ -1,56 +1,79 @@
-# Welcome to your Expo app 👋
+# TP 11 - Juego de Banderas y Capitales (Country Guesser)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Juego interactivo desarrollado en **React Native / Expo** para **Web y Mobile**, realizado en **JavaScript puro (sin TypeScript)**, fácil de entender y con una interfaz visual moderna y atractiva.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Cómo ejecutar el proyecto
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+Para abrir el juego en el navegador web:
 ```bash
-npm run reset-project
+npm run web
+```
+O para iniciar el servidor de desarrollo de Expo (móvil o web):
+```bash
+npx expo start
+```
+- Presiona `w` en la terminal para abrirlo en la Web.
+- O escanea el código QR con la app **Expo Go** en tu celular (Android / iOS).
+
+---
+
+## 📋 Consigna y Requisitos cumplidos
+
+### 1. Consigna Base
+- ✅ **Carga de Países con `useEffect`**: Al montar la app, se consumen los países y banderas desde `https://countriesnow.space/api/v0.1/countries/flag/images` y se guardan en el state del Context.
+- ✅ **País al azar**: Al recibir los países, se selecciona uno aleatorio como objetivo a adivinar.
+- ✅ **Aciertos y Errores**:
+  - Si el usuario acierta: suma **10 puntos** (+ segundos restantes del timer como bonus) y se elige un nuevo país automáticamente.
+  - Si el usuario falla: resta **1 punto**.
+- ✅ **Puntaje en pantalla**: El puntaje y la racha se muestran en pantalla en todo momento en `<ScoreBoard />`.
+
+### 2. Requisito de Context (Obligatorio)
+- ✅ Toda la lógica y estado viven en `GameContext` (`createContext` + `useContext`), expuesto mediante `GameProvider`.
+- ✅ **Cero pasaje de datos por props**: Los componentes `<Flag />`, `<GuessForm />`, `<ScoreBoard />`, `<Timer />`, `<Leaderboard />`, `<CapitalOptions />` y `<Clues />` consumen el contexto mediante el hook `useGame()`, sin recibir props del componente padre.
+
+### 3. Plus Implementados
+- ⏱️ **Timer (15s por bandera)**: Cada país tiene 15 segundos. Si aciertas antes de que finalice, ¡los segundos restantes se suman como puntos extra al score!
+- 👥 **Multijugador con Ranking**: Permite ingresar y cambiar el nombre del jugador. El puntaje y la tabla de posiciones se persisten en `localStorage`.
+- 💡 **Pistas dinámicas**: 
+  - En **Modo Bandera**: Revela una letra al azar del nombre del país descontando 2 segundos del timer.
+  - En **Modo Capitales**: Se borra una opción errónea automáticamente cada 5 segundos (o a pedido del jugador descontando 2s).
+- 🏛️ **Modo Capitales**: Modalidad alternativa que muestra la bandera y 3 opciones para elegir cuál es la capital del país, consumiendo la API de capitales (`https://countriesnow.space/api/v0.1/countries/capital`).
+
+---
+
+## 📁 Estructura del Proyecto
+
+```text
+tp11efsi/
+├── src/
+│   ├── app/
+│   │   ├── _layout.tsx         # Root layout que envuelve con <GameProvider>
+│   │   ├── index.tsx           # Pantalla principal (JavaScript)
+│   │   └── explore.tsx         # Pantalla de ranking secundario
+│   ├── context/
+│   │   └── GameContext.jsx     # Contexto central: estados, APIs, timer, pistas y puntaje
+│   ├── components/
+│   │   ├── GameScreen.jsx      # Pantalla integrada con navegación de pestañas
+│   │   ├── Flag.jsx            # <Flag /> Muestra la bandera del país actual
+│   │   ├── GuessForm.jsx       # <GuessForm /> Input y sugerencias para adivinar
+│   │   ├── ScoreBoard.jsx      # <ScoreBoard /> Puntos, racha, ronda y selector de modo
+│   │   ├── Timer.jsx           # <Timer /> Barra y cuenta regresiva de 15 segundos
+│   │   ├── Clues.jsx           # <Clues /> Pistas con letras descubiertas
+│   │   ├── CapitalOptions.jsx  # <CapitalOptions /> 3 opciones para el modo capitales
+│   │   ├── Leaderboard.jsx     # <Leaderboard /> Tabla de posiciones y medallas
+│   │   └── PlayerModal.jsx     # Modal para cambiar nombre de jugador
+│   └── utils/
+│       ├── storage.js          # Persistencia segura en localStorage
+│       ├── countryNames.js     # Normalización y traducción inglés/español
+│       └── countriesFallback.js# Países de respaldo por si no hay conexión
+└── package.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 💡 Ventajas y Detalles Adicionales
+- **Bilingüe (Español / Inglés)**: Puedes escribir los nombres de países en español (ej. *Alemania*, *Estados Unidos*, *España*, *Japón*, *Francia*) o en inglés (*Germany*, *United States*, *Spain*) y ambos son reconocidos.
+- **Sugerencias interactivas**: Al comenzar a escribir, se muestran etiquetas con los países coincidentes para arriesgar con un solo toque.
+- **Modo offline resiliente**: Si la API externa tarda o tiene microcortes, el juego cuenta con un catálogo de respaldo local para que nunca se interrumpa la experiencia.
