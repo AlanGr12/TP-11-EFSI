@@ -1,8 +1,3 @@
-// src/components/Timer.jsx
-// Componente de cuenta regresiva (15s por bandera).
-// Si el jugador acierta antes de que termine, los segundos restantes se suman al puntaje.
-// Consume el Contexto (no recibe props del padre).
-
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useGame } from '../context/GameContext';
@@ -10,7 +5,6 @@ import { useGame } from '../context/GameContext';
 export default function Timer() {
   const { timeLeft, maxTime, isTimerRunning } = useGame();
 
-  // Porcentaje del tiempo restante (0 a 100%)
   const percentage = Math.max(0, Math.min(100, (timeLeft / maxTime) * 100));
 
   // Color dinámico según la urgencia del reloj
@@ -37,7 +31,6 @@ export default function Timer() {
         </View>
       </View>
 
-      {/* Barra de progreso animada */}
       <View style={styles.progressBarBackground}>
         <View
           style={[

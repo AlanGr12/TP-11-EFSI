@@ -1,7 +1,3 @@
-// src/components/Leaderboard.jsx
-// Tabla de jugadores y posiciones persistida en localStorage (Plus 2).
-// Consume el Contexto (no recibe props del padre).
-
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { useGame } from '../context/GameContext';

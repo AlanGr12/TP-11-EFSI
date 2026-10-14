@@ -1,7 +1,3 @@
-// src/components/ScoreBoard.jsx
-// Muestra el puntaje actual en todo momento, racha, ronda, jugador y selector de modo.
-// Consume el Contexto (no recibe props del padre).
-
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useGame } from '../context/GameContext';

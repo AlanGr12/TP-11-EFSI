@@ -1,7 +1,3 @@
-// src/components/Clues.jsx
-// Muestra las pistas de letras reveladas en modo bandera.
-// Consume el Contexto (no recibe props del padre).
-
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useGame } from '../context/GameContext';

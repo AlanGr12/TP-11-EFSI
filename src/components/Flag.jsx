@@ -1,10 +1,6 @@
-// src/components/Flag.jsx
-// Componente que muestra la bandera actual a adivinar.
-// Consume el Contexto (no recibe props del padre).
-
-import React, { useState } from 'react';
-import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import { Image } from 'expo-image';
+import { useState } from 'react';
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { useGame } from '../context/GameContext';
 
 export default function Flag() {

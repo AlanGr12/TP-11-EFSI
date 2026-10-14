@@ -1,8 +1,3 @@
-// src/components/CapitalOptions.jsx
-// Muestra las 3 opciones de capitales en el Modo Capitales (Plus 4).
-// Se elimina una opción errónea cada 5 segundos como pista.
-// Consume el Contexto (no recibe props del padre).
-
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useGame } from '../context/GameContext';

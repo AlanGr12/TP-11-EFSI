@@ -1,7 +1,3 @@
-// src/components/GuessForm.jsx
-// Formulario para ingresar o seleccionar el país a adivinar.
-// Consume el Contexto (no recibe props del padre).
-
 import React, { useState, useMemo } from 'react';
 import {
   View,

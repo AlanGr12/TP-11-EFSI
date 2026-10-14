@@ -1,7 +1,3 @@
-// src/components/PlayerModal.jsx
-// Modal para ingresar o cambiar el nombre del jugador para el ranking multijugador.
-// Consume el Contexto (no recibe props del padre).
-
 import React, { useState } from 'react';
 import {
   View,

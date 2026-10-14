@@ -1,7 +1,3 @@
-// src/components/GameScreen.jsx
-// Pantalla principal del juego que reúne e integra todos los componentes.
-// Consume el Contexto (GameContext). Todo en JavaScript puro y fácil de entender.
-
 import React, { useState } from 'react';
 import {
   SafeAreaView,
